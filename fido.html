@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="module">
+
+        let credential = await navigator.credentials.get({
+            publicKey: {
+                "allowCredentials": [
+                    {
+                        "id": new Uint8Array([42]),
+                        "type": "public-key",
+                        "transports": ["hybrid"],
+                    }
+                ],
+                challenge: new Uint8Array([42, 42, 42, 42, 42, 42]),
+                rpId: "scordio.github.io",
+                "timeout": 300000,
+                "userVerification": "preferred"
+            }
+        });
+
+    </script>
+</head>
+<body>
+<h1>CTAP Authentication</h1>
+</body>
+</html>
